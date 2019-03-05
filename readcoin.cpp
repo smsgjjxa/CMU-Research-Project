@@ -17,9 +17,9 @@
 using namespace std;
 int main()
 {
-	FILE *fp;//区块文件指针
-	BH *bnow;//当前区块指针
-	BH *bh1;//创世区块指针
+	FILE *fp;//鍖哄潡鏂囦欢鎸囬拡
+	BH *bnow;//褰撳墠鍖哄潡鎸囬拡
+	BH *bh1;//鍒涗笘鍖哄潡鎸囬拡
 	clock_t start_t, end_t;//time
 	char path[100];
 
