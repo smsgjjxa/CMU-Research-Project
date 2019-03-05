@@ -17,21 +17,21 @@
 using namespace std;
 int main()
 {
-	FILE *fp;//Çø¿éÎÄ¼şÖ¸Õë
-	BH *bnow;//µ±Ç°Çø¿éÖ¸Õë
-	BH *bh1;//´´ÊÀÇø¿éÖ¸Õë
-	fp = fopen("bitcoin.bin", "rb");//´ò¿ª¶ş½øÖÆÇø¿éÎÄ¼ş
+	FILE *fp;//åŒºå—æ–‡ä»¶æŒ‡é’ˆ
+	BH *bnow;//å½“å‰åŒºå—æŒ‡é’ˆ
+	BH *bh1;//åˆ›ä¸–åŒºå—æŒ‡é’ˆ
+	fp = fopen("bitcoin.bin", "rb");//æ‰“å¼€äºŒè¿›åˆ¶åŒºå—æ–‡ä»¶
 
 	bnow = NULL;
 	bnow = (BH*)malloc(sizeof(BH));
-	b_finput(bnow, fp);//´ÓÎÄ¼ş¶ÁÇø¿éÍ·
+	b_finput(bnow, fp);//ä»æ–‡ä»¶è¯»åŒºå—å¤´
 	bh1 = bnow;
 	while (1)
 	{
 		b_print(bnow);
 		bnow->next = (BH*)malloc(sizeof(BH));
-		//´ÓÎÄ¼ş¶ÁÇø¿é
-		if (b_finput(bnow->next, fp))//Èç¹û¶Áµ½ÁËÎÄ¼şÎ²
+		//ä»æ–‡ä»¶è¯»åŒºå—
+		if (b_finput(bnow->next, fp))//å¦‚æœè¯»åˆ°äº†æ–‡ä»¶å°¾
 		{
 			free(bnow->next);
 			bnow->next = NULL;
@@ -40,16 +40,16 @@ int main()
 		bnow->next->pre = bnow;
 		bnow = bnow->next;
 	}
-	fclose(fp);//¹Ø±ÕÇø¿éÎÄ¼ş
+	fclose(fp);//å…³é—­åŒºå—æ–‡ä»¶
 
 	bnow = bh1;
 	while (1)
 	{
-		if (bnow->next == NULL)//ÊÇ·ñµ½´ïÇø¿éÁ´Ä©Î²
+		if (bnow->next == NULL)//æ˜¯å¦åˆ°è¾¾åŒºå—é“¾æœ«å°¾
 			break;
-		if (b_cmp(bnow))//ÑéÖ¤³É¹¦
+		if (b_cmp(bnow))//éªŒè¯æˆåŠŸ
 			printf("correct\n");
-		else//ÑéÖ¤Ê§°Ü
+		else//éªŒè¯å¤±è´¥
 		{
 			printf("error\n");
 		}
