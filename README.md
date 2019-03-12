@@ -2,7 +2,9 @@
 A Simple Bitcoin System
 
 This a simple simulation of bitcoin system. We have put it on GitHub.
+
 Link: https://github.com/smsgjjxa/Research-Project
+
 First, we use C++ to build a single miner system. We generate a random secret key first and use it to generate public key via ECDSA algorithm. We use this pair of key to represent the miner’s e-wallet. We also create a data structure like the block head of bitcoin to mine. We set the block size 128 bytes, which is for us to do twice SHA256 to get hash value of the block, just like bitcoin.
  Mining is similar with bitcoin too. If the program finds a block which it’s hash value accords with target (number of front 0), it has mined a block. For simplification, at first of the program, we will input the mining target and a string as the information which miners want to write in block of all the block. In addition, we set the program will stop after having mined a certain number of blocks.
  
