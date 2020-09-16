@@ -1,4 +1,4 @@
-# Research-Project
+# CMU Research-Project
 
 A Simple Bitcoin System
 
